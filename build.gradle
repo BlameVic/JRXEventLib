@@ -1,6 +1,6 @@
 apply plugin: "java"
 
-group = "com.github.blamevic.irc"
+group = "com.github.blamevic.event"
 project.version = version
 
 task sourcesJar(type: Jar, dependsOn: classes) {
