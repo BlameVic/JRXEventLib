@@ -1,10 +1,11 @@
 package com.github.blamevic.event;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public abstract class EventMatcherBase implements IEventMatcher{
-    List<IEventMatcher> matchers;
+    List<IEventMatcher> matchers = new ArrayList<>();
 
     protected void addEventMatcher(IEventMatcher... eventMatchers)
     {
