@@ -2,6 +2,7 @@ package com.github.blamevic.event;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 public class EventBus
@@ -26,11 +27,11 @@ public class EventBus
 
     public static void processEvent(IEvent event, IEventProcessor processor)
     {
-        List<IEventMatcher> matchedMatchers = new ArrayList<>(processor.getEventMatchers().size());
+        List<IEventMatcher> matchedMatchers = new LinkedList<>();
 
-        processor.getEventMatchers().parallelStream()
-                .filter(matcher -> matcher.match(event))
-                .forEach(matchedMatchers::add);
+        for (IEventMatcher matcher : processor.getEventMatchers())
+            if (matcher.match(event))
+                matchedMatchers.add(matcher);
 
         processor.processEvent(event, matchedMatchers);
     }
