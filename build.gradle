@@ -3,6 +3,10 @@ apply plugin: "java"
 group = "com.github.blamevic.event"
 project.version = version
 
+repositories {
+    mavenCentral()
+}
+
 dependencies {
     testCompile 'org.jfree:jfreechart:1.0.19'
 }
