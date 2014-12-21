@@ -33,6 +33,6 @@ public class EventBus
             if (matcher.match(event))
                 matchedMatchers.add(matcher);
 
-        processor.processEvent(event, matchedMatchers);
+        if (matchedMatchers.size() != 0) processor.processEvent(event, matchedMatchers);
     }
 }
