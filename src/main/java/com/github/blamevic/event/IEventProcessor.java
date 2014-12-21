@@ -6,5 +6,5 @@ public interface IEventProcessor
 {
     public List<IEventMatcher> getEventMatchers();
 
-    public void processEvent(IEvent event);
+    public void processEvent(IEvent event, List<IEventMatcher> matchedMatchers);
 }
