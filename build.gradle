@@ -3,6 +3,10 @@ apply plugin: "java"
 group = "com.github.blamevic.event"
 project.version = version
 
+dependencies {
+    testCompile 'org.jfree:jfreechart:1.0.19'
+}
+
 task sourcesJar(type: Jar, dependsOn: classes) {
     classifier = 'sources'
     from sourceSets.main.allSource
