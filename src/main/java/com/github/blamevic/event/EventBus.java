@@ -1,11 +1,22 @@
 package com.github.blamevic.event;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class EventBus
 {
-    public List<IEventProcessor> processors = new ArrayList<>();
+    public List<IEventProcessor> processors;
+
+    public EventBus()
+    {
+        this.processors = new ArrayList<>();
+    }
+
+    public EventBus(IEventProcessor... processors)
+    {
+        this.processors = Arrays.asList(processors);
+    }
 
     public void processEvent(IEvent event)
     {
