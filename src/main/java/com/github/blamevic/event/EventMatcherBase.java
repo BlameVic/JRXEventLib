@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public abstract class EventMatcherBase implements IEventMatcher{
+public abstract class EventMatcherBase implements IEventMatcher
+{
     List<IEventMatcher> matchers = new ArrayList<>();
 
     protected void addEventMatcher(IEventMatcher... eventMatchers)
@@ -13,7 +14,8 @@ public abstract class EventMatcherBase implements IEventMatcher{
     }
 
     @Override
-    public final boolean match(IEvent event) {
+    public final boolean match(IEvent event)
+    {
         for (IEventMatcher matcher : matchers)
         {
             if (!matcher.match(event)) return false;

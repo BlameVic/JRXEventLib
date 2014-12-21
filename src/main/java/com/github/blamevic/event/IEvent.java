@@ -1,3 +1,5 @@
 package com.github.blamevic.event;
 
-public interface IEvent {}
+public interface IEvent
+{
+}
