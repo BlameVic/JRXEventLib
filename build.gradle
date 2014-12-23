@@ -12,6 +12,16 @@ dependencies {
     testCompile "junit:junit:4.12"
 }
 
+test {
+    testLogging {
+        exceptionFormat = 'full'
+    }
+}
+compileJava {
+    options.incremental = true
+    sourceCompatibility = 1.7
+}
+
 task sourcesJar(type: Jar, dependsOn: classes) {
     classifier = 'sources'
     from sourceSets.main.allSource
@@ -19,10 +29,4 @@ task sourcesJar(type: Jar, dependsOn: classes) {
 
 artifacts {
     archives sourcesJar
-}
-
-test {
-    testLogging {
-        exceptionFormat = 'full'
-    }
 }
