@@ -8,7 +8,7 @@ import java.util.List;
 
 public class ANDMatcher implements IEventMatcher
 {
-    List<IEventMatcher> matchers;
+    public List<IEventMatcher> matchers;
 
     public ANDMatcher(IEventMatcher... matchers)
     {

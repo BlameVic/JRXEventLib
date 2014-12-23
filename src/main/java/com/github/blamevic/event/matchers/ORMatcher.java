@@ -9,8 +9,8 @@ import java.util.List;
 
 public class ORMatcher implements IEventMatcher
 {
-    List<IEventMatcher> matchers;
-    List<IEventMatcher> matchedMatchers = null;
+    public List<IEventMatcher> matchers;
+    public List<IEventMatcher> matchedMatchers;
 
     public ORMatcher(IEventMatcher... matchers)
     {
