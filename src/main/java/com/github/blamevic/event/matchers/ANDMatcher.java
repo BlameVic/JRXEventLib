@@ -15,6 +15,11 @@ public class ANDMatcher implements IEventMatcher
         this.matchers = Arrays.asList(matchers);
     }
 
+    public ANDMatcher(List<IEventMatcher> matchers)
+    {
+        this.matchers = matchers;
+    }
+
     @Override
     public boolean match(IEvent event)
     {

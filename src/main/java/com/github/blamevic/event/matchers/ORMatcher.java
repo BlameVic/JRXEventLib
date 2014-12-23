@@ -17,6 +17,11 @@ public class ORMatcher implements IEventMatcher
         this.matchers = Arrays.asList(matchers);
     }
 
+    public ORMatcher(List<IEventMatcher> matchers)
+    {
+        this.matchers = matchers;
+    }
+
     @Override
     public boolean match(IEvent event)
     {
