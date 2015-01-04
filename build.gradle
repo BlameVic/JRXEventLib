@@ -16,6 +16,12 @@ test {
     testLogging {
         exceptionFormat = 'full'
     }
+    
+    testLogging.showStandardStreams = true
+
+    beforeTest { descriptor ->
+        logger.lifecycle("Running test: " + descriptor)
+    }
 }
 compileJava {
     options.incremental = true
